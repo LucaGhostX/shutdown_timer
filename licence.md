@@ -8,17 +8,17 @@
 Python 3.11*
 
 *Libraries used:
-customtkinter
-tkinter
-time
-subprocess
-wakepy
-base64
-io
-PIL
-typing
+customtkinter,
+tkinter,
+time,
+subprocess,
+wakepy,
+base64,
+io,
+PIL,
+typing,
 threading*
 
 *Executable created with:
-pyinstaller
+pyinstaller,
 Inno Setup*
