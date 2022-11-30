@@ -1,4 +1,5 @@
-# Shutdown Timer 2.0
+# Shutdown Timer 2.0 
+### Windows recognizes the program as a virus, it's a FALSE POSITIVE
 A simple, small program for creating a shutdown timer.
 
 ![img 1](https://user-images.githubusercontent.com/64761832/204900895-262a639e-43ee-4523-99d9-31967bef8001.png)
