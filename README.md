@@ -2,9 +2,8 @@
 ### Windows recognizes the program as a virus, it's a FALSE POSITIVE
 A simple, small program for creating a shutdown timer.
 
-![img 1](https://user-images.githubusercontent.com/64761832/204900895-262a639e-43ee-4523-99d9-31967bef8001.png)
-![img 2](https://user-images.githubusercontent.com/64761832/204900906-0061ffa1-3887-44cb-a973-b0698ba66d62.png)
-
+![img 1 (Personalizzato)](https://user-images.githubusercontent.com/64761832/204908675-f2275b80-b013-49b1-a58e-5f993e94fa23.png)
+![img 2 (Personalizzato)](https://user-images.githubusercontent.com/64761832/204908711-b35dbb7b-db86-4c7c-bb3d-9d446b6262f6.png)
 
 *Programming language: Python 3.11*
 
