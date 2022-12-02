@@ -16,8 +16,7 @@ Python 3.11*
 *Libraries used:
 customtkinter, tkinter, time, subprocess, wakepy, base64, io, PIL, typing, threading*
 
-*Executable and installer created with:
-nuitka, Inno Setup*
+*Executable and installer created with: nuitka, Inno Setup*
 
 # Older versions
 
@@ -32,7 +31,7 @@ A simple, small program for creating a shutdown timer.
 
 *Libraries used: customtkinter, tkinter, time, subprocess, wakepy, base64, io, PIL, typing, threading*
 
-*Executable created with: pyinstaller, Inno Setup*
+*Executable and installer created with: pyinstaller, Inno Setup*
 
 
 ### Shutdown Timer 1.0
