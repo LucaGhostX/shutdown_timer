@@ -19,6 +19,6 @@ PIL,
 typing,
 threading*
 
-*Executable created with:
-pyinstaller,
+*Executable and installer created with:
+nuitka,
 Inno Setup*
