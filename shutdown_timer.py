@@ -1,5 +1,5 @@
 from customtkinter import *
-from tkinter import PhotoImage, messagebox
+from tkinter import PhotoImage
 from time import sleep
 from subprocess import call
 from wakepy import set_keepawake
@@ -32,8 +32,8 @@ class Spinbox(CTkFrame):
         self.step_size = step_size
         self.command = command
 
-        self.grid_rowconfigure((0, 2), weight=0)  # buttons don't expand
-        self.grid_rowconfigure(1, weight=1)  # entry expands
+        self.grid_rowconfigure((0, 2), weight=0)
+        self.grid_rowconfigure(1, weight=1)
 
         self.entry = CTkEntry(self, width=width, height=height, justify="right", font = (myfont, 27))
         self.entry.grid(row=1, pady = 3, sticky="ns")
@@ -52,7 +52,7 @@ class Spinbox(CTkFrame):
         try:
             return int(self.entry.get())
         except ValueError:
-            return None
+            return None,self.entry.delete(0, "end"), self.entry.insert(0, self.start)
 
     def set(self, *args, value: int = None, start: int = None, limit: int = None, **kwargs):
         
@@ -70,7 +70,6 @@ class Spinbox(CTkFrame):
         self.entry.delete(0, "end")
         self.entry.insert(0, str(int(value)))
 
-
     def add_button_callback(self):
         if self.command is not None:
             self.command()
@@ -81,7 +80,10 @@ class Spinbox(CTkFrame):
             self.entry.delete(0, "end")
             self.entry.insert(0, value)
         except ValueError:
-            return
+            if self.start != None:
+                return self.entry.delete(0, "end"), self.entry.insert(0, self.start)
+            else:
+                return self.entry.delete(0, "end"), self.entry.insert(0, 0)
 
     def subtract_button_callback(self):
         if self.command is not None:
@@ -93,7 +95,10 @@ class Spinbox(CTkFrame):
             self.entry.delete(0, "end")
             self.entry.insert(0, value)
         except ValueError:
-            return
+            if self.start != None:
+                return self.entry.delete(0, "end"), self.entry.insert(0, self.start)
+            else:
+                return self.entry.delete(0, "end"), self.entry.insert(0, 0)
 
 ################################ Main Window
 
@@ -166,13 +171,16 @@ class window():
 
         text_out.place(relx=0.5,rely=0.838, anchor = "center")
 
+################################ Timer
 
 class start_timer():
     def __init__(self):
-
-        seconds = int(spinbox_second.get())
-        minutes = int(spinbox_minute.get())
-        hours = int(spinbox_hour.get())
+        try:
+            seconds = int(spinbox_second.get())
+            minutes = int(spinbox_minute.get())
+            hours = int(spinbox_hour.get())
+        except:
+            return error_value()
 
         result = (hours * 3600) + (minutes * 60) + seconds
 
@@ -210,11 +218,33 @@ class start_timer():
         cancel_button = CTkButton(self.quit, text = "Cancel", font = (myfont, 18), width= 75, height= 35,fg_color=color_button,
                                     command=lambda: Thread(target=self.quit_closing()).start()).place(relx=0.72,rely=0.8, anchor = "center")
 
-    def root_closing(self):
+    def root_closing(self): # Close main window
         root.destroy()
 
-    def quit_closing(self):
-        self.quit.destroy()    
+    def quit_closing(self): # Close toplevel window
+        self.quit.destroy()
+
+################################ Error: If an invalid value was entered
+
+class error_value():
+    def __init__(self):
+        spinbox_second.set(value = 0, start = 0, limit = 59)
+        spinbox_minute.set(value = 0, start = 0, limit = 59)
+        spinbox_hour.set(value = 0, start = 0, limit = 99),
+
+        self.error = CTkToplevel()
+        self.error.geometry("200x130+850+450")
+        self.error.title("Error")
+        self.error.minsize(200,130)
+        self.error.maxsize(200,130)
+
+        error_label = CTkLabel(self.error, text = "Invalid value,\n enter data again", font = (myfont, 20)).place(relx=0.5,rely=0.3, anchor= "center")
+
+        error_okay_button = CTkButton(self.error, text = "Okay", font = (myfont, 18), width= 180, height= 35, fg_color=color_button,
+                                    command=lambda: Thread(target=self.error_closing()).start()).place(relx=0.5,rely=0.8, anchor = "center")
+        
+    def error_closing(self): # Close error toplevel window
+        self.error.destroy()
 
 ################################
 
