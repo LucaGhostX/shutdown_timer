@@ -5,10 +5,10 @@
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{21FCB4C6-D7FE-4D78-8A23-F493F7EB48AA}}
+AppId={{FOR SECURITY REASONS IT IS NOT AVAILABLE.}}
 AppName=Shutdown Timer
-AppVersion=2.1
-AppVerName=Shutdown Timer 2.1
+AppVersion=2.2
+AppVerName=Shutdown Timer 2.2
 AppPublisher=LucaGhostX
 AppPublisherURL=https://github.com/LucaGhostX/shutdown_timer
 AppSupportURL=https://github.com/LucaGhostX/shutdown_timer
@@ -24,8 +24,8 @@ SolidCompression=yes
 SetupIconFile=C:\Users\lucag\Desktop\esercizi\shutdown nuovo\Nuova cartella\installer.ico
 VersionInfoCompany=LucaGhostX
 VersionInfoProductName=Shutdown Timer Installer
-VersionInfoProductVersion=2.1
-VersionInfoVersion=0.0.2.1
+VersionInfoProductVersion=2.2
+VersionInfoVersion=0.0.2.2
 AppCopyright=LucaGhostX
 
 [Languages]
