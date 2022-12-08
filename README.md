@@ -41,7 +41,7 @@ A simple, small program for creating a shutdown timer.
 Transition from tkinter to customtkinter
 
 ### Info
-*Programming language: Python 3.11*
+*Programming language: Python 3.10*
 
 *Libraries used: customtkinter, tkinter, time, subprocess, wakepy, base64, io, PIL, typing, threading*
 
