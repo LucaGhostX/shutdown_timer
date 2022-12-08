@@ -9,7 +9,7 @@ Added error window for unsupported characters.
 
 ## Info
 *Programming language:
-Python 3.11*
+Python 3.10*
 
 *Libraries used:
 customtkinter, tkinter, time, subprocess, wakepy, base64, io, PIL, typing, threading*
@@ -26,7 +26,7 @@ Bug Fix, updated customtkinter to version 5.0.1, changed compiler (pyinstaller -
 ### Info
 
 *Programming language:
-Python 3.11*
+Python 3.10
 
 *Libraries used:
 customtkinter, tkinter, time, subprocess, wakepy, base64, io, PIL, typing, threading*
