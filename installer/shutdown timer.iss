@@ -7,8 +7,8 @@
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 AppId={{FOR SECURITY REASONS IT IS NOT AVAILABLE.}}
 AppName=Shutdown Timer
-AppVersion=2.2
-AppVerName=Shutdown Timer 2.2
+AppVersion=2.3
+AppVerName=Shutdown Timer 2.3
 AppPublisher=LucaGhostX
 AppPublisherURL=https://github.com/LucaGhostX/shutdown_timer
 AppSupportURL=https://github.com/LucaGhostX/shutdown_timer
@@ -18,32 +18,32 @@ DisableDirPage=yes
 DefaultGroupName=Shutdown Timer Installer
 DisableProgramGroupPage=yes
 LicenseFile=C:\Users\lucag\Desktop\esercizi\shutdown nuovo\Nuova cartella\license.txt
-OutputBaseFilename=Shutdown Timer Installer
-Compression=lzma
+OutputBaseFilename=ShutdownTimerInstaller_x64
+Compression=zip
 SolidCompression=yes
 SetupIconFile=C:\Users\lucag\Desktop\esercizi\shutdown nuovo\Nuova cartella\installer.ico
 VersionInfoCompany=LucaGhostX
-VersionInfoProductName=Shutdown Timer Installer
-VersionInfoProductVersion=2.2
-VersionInfoVersion=0.0.2.2
+VersionInfoProductName=Shutdown Timer Installer x64
+VersionInfoProductVersion=2.3
+VersionInfoVersion=0.0.2.3
 AppCopyright=LucaGhostX
 
 [Languages]
-Name: "english"; MessagesFile: "compiler:Default.isl"
+Name: "English"; MessagesFile: "compiler:Default.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 0,6.1
 
 [Files]
-Source: "..\dist\Shutdown Timer.exe"; DestDir: "{commonpf64}\Shutdown Timer"; Flags: 64bit; Tasks: desktopicon quicklaunchicon
+Source: "..\dist\Shutdown Timer.exe"; DestDir: "{sd}\Shutdown Timer"; Flags: 64bit; Tasks: desktopicon quicklaunchicon; Check: IsWin64
 Source: "..\GFSNeohellenic-Bold.ttf"; DestDir: "{fonts}"; Flags: ignoreversion uninsneveruninstall onlyifdoesntexist; FontInstall: """GFS Neohellenic"""
 
 [Icons]
-Name: "{group}\Shutdown Timer"; Filename: "{commonpf64}\Shutdown Timer\Shutdown Timer.exe"
-Name: "{commondesktop}\Shutdown Timer"; Filename: "{commonpf64}\Shutdown Timer\Shutdown Timer.exe"; Tasks: desktopicon
-Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\Shutdown Timer"; Filename: "{commonpf64}\Shutdown Timer\Shutdown Timer.exe"; Tasks: quicklaunchicon
+Name: "{group}\Shutdown Timer"; Filename: "{sd}\Shutdown Timer\Shutdown Timer.exe"
+Name: "{commondesktop}\Shutdown Timer"; Filename: "{sd}\Shutdown Timer\Shutdown Timer.exe"; Tasks: desktopicon
+Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\Shutdown Timer"; Filename: "{sd}\Shutdown Timer\Shutdown Timer.exe"; Tasks: quicklaunchicon
 
 [Run]
-Filename: "{commonpf64}\Shutdown Timer\Shutdown Timer.exe"; Description: "{cm:LaunchProgram,Shutdown Timer}"; Flags: nowait postinstall skipifsilent
+Filename: "{sd}\Shutdown Timer\Shutdown Timer.exe"; Description: "{cm:LaunchProgram,Shutdown Timer}"; Flags: nowait postinstall skipifsilent
 
